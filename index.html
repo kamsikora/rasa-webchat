@@ -11,8 +11,9 @@
 	<script>
 		WebChat.default.init({
 			selector: "#webchat",
+			initPayload: "/greet",
 			interval: 1000,
-			customData: {"userId": "123"},
+			customData: {"language": "pl"},
 			socketUrl: "https://json-rasa.herokuapp.com",
 			socketPath: "/socket.io/",
 			title: "Chatbot",
