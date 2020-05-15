@@ -12,19 +12,24 @@
 		WebChat.default.init({
 			selector: "#webchat",
 			initPayload: "/greet",
-			interval: 1000,
-			customData: {"language": "pl"},
 			socketUrl: "https://json-rasa.herokuapp.com",
 			socketPath: "/socket.io/",
 			title: "Chatbot",
 			subtitle: "Testowy",
 			showCloseButton: true,
-			showFullScreenButton: true,
-			showMessageDate: true,
 			fullScreenMode: false,
 			hideWhenNotConnected: false,
 			connectOn: "open",
-			storage: "session",
+			autoClearCache: true,
+            		linksOpenTab: false,
+			showFullScreenButton: true,
+			showMessageDate: true,
+			customMessageDelay: (message) => {
+				return 900 + message.length;
+			},
+			params: {
+				storage: "local"
+			},
 		})
 	</script>
 </body>
